@@ -1,0 +1,269 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %} Add New Student | Open University of Nigeria Result Portal {% endblock title %}
+
+{% block side_bar %}
+    {% include 'partial_active_element.html' with active='students' %}
+{% endblock side_bar %}
+
+{% block content %}
+<div class="container-fluid mt-5">
+        {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-success alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+  Add new {{ user_type }}
+<!-- Extended material form grid -->
+<form method="post">
+  {% csrf_token %}
+  <!-- Grid row -->
+    <div class="form-row">
+      <!-- Grid column -->
+        <div class="col-md-4">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <i class="fa fa-user prefix"></i>
+         {{ form.username }}
+          <label for="inputCityMD">{{ form.username.label }}</label>
+          {{ form.username.errors }}
+        </div>
+      </div>
+      <!-- Grid column -->
+        <div class="col-md-4">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <i class="fa fa-dot-circle-o prefix"></i>
+         {{ form.firstname }}
+          <label for="inputCityMD">{{ form.firstname.label }}</label>
+          {{ form.firstname.errors }}
+        </div>
+      </div>
+      <!-- Grid column -->
+  
+      <!-- Grid column -->
+      <div class="col-md-4">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <i class="fa fa-dot-circle-o prefix"></i>
+          {{ form.lastname }}
+          <label for="inputZipMD">{{ form.lastname.label }}</label>
+          {{ form.lastname.errors }}
+        </div>
+      </div>
+    </div>
+    <!-- Grid row -->
+    <div class="form-row">
+      <div class="col-md-6">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <i class="fa fa-envelope prefix"></i>
+          {{ form.email }}
+          <label for="student_email">{{ form.email.label }}</label>
+          {{ form.email.errors }}
+        </div>
+      </div>
+      <!-- Grid column -->
+       <div class="col-md-6">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <i class="fa fa-home prefix"></i>
+          {{ form.address }}
+          <label for="student_address">{{ form.address.label }}</label>
+          {{ form.address.errors }}
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <i class="fa fa-eye prefix"></i>
+          {{ form.password1 }}
+          <label for="student_email">{{ form.password1.label }}</label>
+          {{ form.password1.errors }}
+        </div>
+      </div>
+      <!-- Grid column -->
+       <div class="col-md-6">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <i class="fa fa-eye prefix"></i>
+          {{ form.password2 }}
+          <label for="student_address">{{ form.password2.label }}</label>
+          {{ form.password2.errors }}
+        </div>
+      </div>
+    </div>
+    <!-- Grid row -->
+    <div class="row">
+      <!-- Grid column -->
+     
+    </div>
+  
+    <div class="form-row">
+      <!-- Grid column -->
+      <div class="col-md-6">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <i class="fa fa-phone prefix"></i>
+         {{ form.phone }}
+          <label for="inputCityMD">{{ form.phone.label }}</label>
+          {{ form.phone.errors }}
+        </div>
+      </div>
+  
+      <div class="col-md-6">
+        <!-- Material input -->
+        <div>
+          <label for="inputCityMD">{{ form.level.label }}</label>
+        </div>
+        <div class="md-form form-group">
+          <i class="fa fa-dot-bar prefix"></i>
+         {{ form.level }}
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <!-- Grid column -->
+        <div class="col-md-4">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <i class="fa fa-user prefix"></i>
+         {{ form.town }}
+          <label for="inputCityMD">{{ form.town.label }}</label>
+          {{ form.town.errors }}
+        </div>
+      </div>
+      <!-- Grid column -->
+        <div class="col-md-4">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <i class="fa fa-dot-circle-o prefix"></i>
+         {{ form.reg_no }}
+          <label for="inputCityMD">{{ form.reg_no.label }}</label>
+          {{ form.reg_no.errors }}
+        </div>
+      </div>
+      <!-- Grid column -->
+  
+      <!-- Grid column -->
+      <div class="col-md-4">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <i class="fa fa-dot-circle-o prefix"></i>
+          {{ form.state }}
+          <label for="inputZipMD">{{ form.state.label }}</label>
+          {{ form.state.errors }}
+        </div>
+      </div>
+    </div>
+    <!-- Grid row -->
+    <div class="form-row">
+      <div class="col-md-6">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <i class="fa fa-home prefix"></i>
+          {{ form.parent_address }}
+          <label for="student_address">{{ form.parent_address.label }}</label>
+          {{ form.parent_address.errors }}
+        </div>
+      </div>
+      <!-- Grid column -->
+       <div class="col-md-6">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <i class="fa fa-home prefix"></i>
+          {{ form.Parent_name }}
+          <label for="student_address">{{ form.Parent_name.label }}</label>
+          {{ form.Parent_name.errors }}
+        </div>
+      </div>
+    </div>
+    <!-- Grid row -->
+    <div class="row">
+      <!-- Grid column -->
+     
+    </div>
+  
+    <div class="form-row">
+   
+      <div class="col-md-6">
+        <!-- Material input -->
+        <div>
+          <label for="inputCityMD">{{ form.department.label }}</label>
+        </div>
+        <div class="md-form form-group">{{form.department.errors}}
+          <i class="fa fa-dot-bar prefix"></i>
+         {{ form.department }}
+        </div>
+      </div>
+     
+      <div class="col-md-6">
+        <!-- Material input -->
+        <div>
+          <label for="inputCityMD">{{ form.faculty.label }}</label>
+        </div>
+        <div class="md-form form-group">{{form.faculty.errors}}
+          <i class="fa fa-dot-bar prefix"></i>
+         {{ form.faculty }}
+        </div>
+      </div>
+    </div>
+   
+    <!-- Grid row -->
+    <div class="row">
+      <!-- Grid column -->
+     
+    </div>
+  
+    <div class="row">
+      <!-- Grid column -->
+      <div class="col-md-6">
+        <!-- Material input -->
+        <div>
+          <label for="inputCityMD">{{ form.Country.label }}</label>
+        </div>
+        <div class="md-form form-group">{{form.Country.errors}}
+          <i class="fa fa-dot-bar prefix"></i>
+         {{ form.Country }}
+        </div>
+      </div>
+      <div class="col-md-6">
+        <!-- Material input -->
+      
+         
+         <div class="md-form form-group">  {{form.disabled.errors}}
+         <label for="inputCityMD">{{ form.disabled.label }}</label>
+         {{ form.disabled }}
+
+        </div>
+      </div>
+      <div class="col-md-6">
+        <!-- Material input -->
+        <div>
+          <label for="inputCityMD">{{ form.sex.label }}</label>
+        </div>
+        <div class="md-form form-group">
+          <i class="fa fa-dot-bar prefix"></i>
+         {{ form.sex }}
+        </div>
+      </div>
+      <div class="col-md-6">
+        <!-- Material input -->
+          <i class="fa fa-dot-bar prefix"></i>
+         {{ form.lga }}
+         <label for="inputCityMD">{{ form.lga.label }}</label>
+        <div class="md-form form-group">{{form.lga.errors}}
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary btn-md">Save</button>
+  </form>
+  </div>
+  {% endblock %}
+
